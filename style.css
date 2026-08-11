@@ -1,0 +1,446 @@
+/* =========================================
+   VARIABLES GLOBALES (Paleta Pixel Art)
+   ========================================= */
+:root {
+  --color-claro: #E3DEEE;      
+  --color-morado-claro: #907DBA; 
+  --color-morado-medio: #564087; 
+  --color-morado-oscuro: #2A1754;
+  --color-fondo: #130433;      
+  
+  --fuente-pixel: 'Press Start 2P', monospace;
+}
+
+/* =========================================
+   RESETEO BÁSICO
+   ========================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+   ESTILOS GENERALES
+   ========================================= */
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-claro);
+  font-family: var(--fuente-pixel);
+  line-height: 1.5;
+  background-image: linear-gradient(var(--color-morado-oscuro) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--color-morado-oscuro) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* =========================================
+   HEADER & TERMINAL DEV
+   ========================================= */
+.dev-header {
+  background-color: var(--color-fondo);
+  background-image: 
+    linear-gradient(rgba(42, 23, 84, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 23, 84, 0.3) 1px, transparent 1px);
+  background-size: 30px 30px;
+  border-bottom: 6px solid var(--color-morado-medio);
+  padding-bottom: 60px;
+}
+
+/* --- Navegación --- */
+.pixel-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--color-morado-oscuro);
+  border-bottom: 4px solid var(--color-morado-medio);
+  flex-wrap: wrap; 
+  gap: 15px;
+}
+
+.nav-brand {
+  color: var(--color-claro);
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 0px var(--color-fondo);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--color-morado-claro);
+  text-decoration: none;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--color-claro);
+}
+
+/* --- Estructura Responsiva del Hero --- */
+.hero-wrapper {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  text-align: center; 
+  width: 100%;
+}
+
+.hero-badge {
+  display: inline-block;
+  color: var(--color-fondo);
+  background-color: var(--color-morado-claro);
+  padding: 5px 10px;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  border: 2px solid var(--color-claro);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem); 
+  color: var(--color-claro);
+  margin-bottom: 25px;
+  text-shadow: 3px 3px 0px var(--color-morado-medio), 5px 5px 0px var(--color-morado-oscuro);
+  letter-spacing: 2px;
+}
+
+.hero-subtitle {
+  font-size: 0.75rem;
+  color: var(--color-morado-claro);
+  margin-bottom: 50px;
+  line-height: 2.2;
+  letter-spacing: 1px;
+}
+
+.hero-action {
+  background-color: var(--color-fondo);
+  color: var(--color-claro);
+  border: 4px solid var(--color-morado-medio);
+  font-family: inherit;
+  padding: 18px 40px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.1s;
+  box-shadow: 
+    inset -4px -4px 0px var(--color-morado-oscuro),
+    inset 4px 4px 0px rgba(255,255,255,0.1),
+    6px 6px 0px var(--color-fondo),
+    8px 8px 0px var(--color-morado-medio);
+}
+
+.hero-action:hover {
+  background-color: var(--color-morado-oscuro);
+  border-color: var(--color-claro);
+  color: var(--color-claro);
+}
+
+.hero-action:active {
+  transform: translate(6px, 6px);
+  box-shadow: 
+    inset -2px -2px 0px var(--color-morado-oscuro),
+    inset 2px 2px 0px rgba(255,255,255,0.1);
+}
+
+/* --- Ventana de Terminal --- */
+.terminal-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #090217; 
+  border: 4px solid var(--color-morado-medio);
+  box-shadow: 8px 8px 0px rgba(0,0,0,0.6); 
+}
+
+.terminal-header {
+  background-color: var(--color-morado-oscuro);
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 4px solid var(--color-morado-medio);
+}
+
+.terminal-header span[class^="btn-"] {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  border: 2px solid #000;
+}
+
+.btn-rojo { background-color: #ff5f56; }
+.btn-amarillo { background-color: #ffbd2e; }
+.btn-verde { background-color: #27c93f; }
+
+.terminal-title {
+  margin-left: 20px;
+  color: var(--color-claro);
+  font-size: 0.7rem;
+  text-transform: lowercase;
+}
+
+.terminal-body {
+  padding: 30px;
+  font-size: 0.75rem;
+  line-height: 2;
+  text-align: left;
+  overflow-x: auto; 
+}
+
+.comando { color: var(--color-claro); }
+.output-vite { color: #bd34fe; font-weight: bold; text-shadow: 1px 1px 0px #000;}
+.output-texto { color: #27c93f; }
+.output-comentario { color: #7a828e; }
+.output-sistema { color: var(--color-morado-claro); }
+
+.cursor-parpadeante {
+  display: inline-block;
+  width: 12px;
+  background-color: var(--color-claro);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* =========================================
+   POP-UP INTERACTIVO (Pestañas Corregidas)
+   ========================================= */
+.popup-container {
+  width: 90%; /* Ocupa el 90% del ancho para dejar un margen parejo a los lados */
+  max-width: 1400px; /* Límite amplio para monitores grandes */
+  margin: 5vh auto; /* 5% de margen arriba y abajo, automático a los lados */
+}
+
+/* --- Sistema de Pestañas --- */
+.popup-tabs {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap; 
+  position: relative;
+  z-index: 10;
+  margin-bottom: -4px; /* Empuja las pestañas 4px abajo para que muerdan el borde principal */
+}
+
+.tab-btn {
+  background-color: var(--color-fondo);
+  color: var(--color-morado-claro);
+  border: 4px solid var(--color-morado-medio);
+  padding: 12px 25px;
+  font-family: inherit;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  letter-spacing: 1px;
+}
+
+.tab-btn:hover {
+  background-color: var(--color-morado-oscuro);
+  color: var(--color-claro);
+}
+
+/* Pestaña seleccionada (Líneas continuas, sin cortes raros) */
+.tab-btn.active {
+  background-color: var(--color-morado-oscuro);
+  color: var(--color-claro);
+  border-color: var(--color-claro);
+  /* Pintamos el borde de abajo del mismo color del fondo para "borrar" la línea */
+  border-bottom-color: var(--color-morado-oscuro);
+  /* Padding extra abajo para asentar la pestaña sin usar 'transform' */
+  padding-bottom: 16px; 
+}
+
+/* --- Cuerpo del Pop-up --- */
+.popup-body {
+  background-color: var(--color-morado-oscuro);
+  border: 4px solid var(--color-claro);
+  padding: 40px;
+  box-shadow: 15px 15px 0px rgba(0,0,0,0.6);
+  position: relative;
+  z-index: 1; /* Se queda detrás de las pestañas */
+  min-height: 65vh; /* Garantiza que ocupe gran parte de la pantalla verticalmente */
+}
+
+/* --- Control de Paneles --- */
+.tab-panel {
+  display: none; 
+  animation: fade-in 0.3s ease-in-out;
+}
+
+.tab-panel.active {
+  display: block; 
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.panel-title {
+  font-size: 1.2rem;
+  color: var(--color-claro);
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 0px var(--color-fondo);
+  border-bottom: 2px dashed var(--color-morado-medio);
+  padding-bottom: 15px;
+}
+
+.panel-text {
+  font-size: 0.8rem;
+  color: var(--color-morado-claro);
+  line-height: 1.8;
+}
+
+/* --- Grid del Equipo y Marcos Pixelados --- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  gap: 30px;
+}
+
+.team-card {
+  background-color: var(--color-fondo);
+  border: 2px solid var(--color-morado-medio);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-morado-claro);
+}
+
+.pixel-frame {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 15px;
+  background-color: var(--color-morado-oscuro);
+  border: 4px solid var(--color-claro);
+  box-shadow: 
+    4px 4px 0px var(--color-morado-medio),
+    inset -4px -4px 0px rgba(0,0,0,0.5);
+  overflow: hidden; 
+}
+
+.pixel-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated; 
+}
+
+.team-card h3 {
+  font-size: 0.65rem;
+  color: var(--color-claro);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.team-card p {
+  font-size: 0.55rem;
+  color: var(--color-morado-claro);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+  width: 100%;
+  background-color: var(--color-morado-oscuro);
+  border-top: 6px solid var(--color-morado-medio);
+  padding: 40px 20px;
+  margin-top: 50px;
+  box-shadow: inset 0px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.footer h3 {
+  font-size: 1rem;
+  color: var(--color-morado-claro);
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 0px var(--color-fondo);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-claro);
+  text-decoration: none;
+  font-size: 0.6rem;
+  background-color: var(--color-fondo);
+  padding: 12px 18px;
+  border: 2px solid var(--color-morado-medio);
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+  transition: all 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-fondo);
+  background-color: var(--color-morado-claro);
+  border-color: var(--color-claro);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.5);
+}
+
+.footer p {
+  font-size: 0.5rem;
+  color: var(--color-morado-claro);
+  margin-top: 40px;
+}
+
+/* =========================================
+   MEDIA QUERIES (PANTALLAS GRANDES / PC)
+   ========================================= */
+@media (min-width: 992px) {
+  
+  /* Cabecera Lado a Lado */
+  .hero-wrapper {
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: flex-start; 
+    padding: 80px 40px;
+  }
+
+  .hero-content {
+    text-align: left; 
+    flex: 1; 
+    padding-right: 40px; 
+  }
+
+  .terminal-container {
+    flex: 1; 
+    box-shadow: 15px 15px 0px rgba(0,0,0,0.6); 
+  }
+}
