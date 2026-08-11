@@ -5,11 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flujo de Pasos</title>
   
-  <!-- Aquí es donde enlazarás tu archivo CSS más adelante -->
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- fuente pixel art-->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- enlazar archivo CSS externo-->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<header class="dev-header">
+    
+    <!-- Barra de Navegación -->
+    <nav class="pixel-nav">
+      <div class="nav-brand">PixelCourt</div>
+      <ul class="nav-links">
+        <li><a href="#">Proyecto</a></li>
+        <li><a href="#">Ramas</a></li>
+        <li><a href="#">Componentes</a></li>
+      </ul>
+    </nav>
+
+    <!-- CONTENEDOR RESPONSIVO: Agrupa textos y terminal -->
+    <div class="hero-wrapper">
+      
+      <!-- Columna 1: Textos y Botón -->
+      <div class="hero-content">
+        <span class="hero-badge">✦ DESARROLLO FRONTEND ✦</span>
+        <h1 class="hero-title">PIXEL COURT</h1>
+        <p class="hero-subtitle">Construyendo interfaces bloque a bloque.<br>Implementación de componentes, estilos globales y trabajo en equipo.</p>
+        <button class="hero-action">INICIAR DEPLOY ▶</button>
+      </div>
+
+      <!-- Columna 2: Ventana de Terminal -->
+      <div class="terminal-container">
+        <div class="terminal-header">
+          <span class="btn-rojo"></span>
+          <span class="btn-amarillo"></span>
+          <span class="btn-verde"></span>
+          <span class="terminal-title">bash — pixel-court — 80x24</span>
+        </div>
+        <!-- Cuerpo de la consola -->
+      <div class="terminal-body">
+        <p class="comando">~/proyectos/pixel-court $ git checkout -b HU-5-estilos-base</p>
+        <p class="output-texto">Switched to a new branch 'HU-5-estilos-base'</p>
+        <br>
+        <p class="comando">~/proyectos/pixel-court $ npm run dev</p>
+        <br>
+        <p class="output-vite">VITE v5.0.0 ready in 250 ms</p>
+        <p class="output-texto">➜  Local:   http://localhost:5173/</p>
+        <br>
+        <p class="output-comentario">/* Documentación del proyecto */</p>
+        <p class="output-sistema">> Sistema de componentes listo para la interfaz 2D...</p>
+        <p class="output-sistema">> Variables CSS globales cargadas correctamente [OK]</p>
+        <p class="output-sistema">> Diseño adaptable (Mobile First) estabilizado.</p>
+        <br>
+        <p class="comando">~/proyectos/pixel-court $ <span class="cursor-parpadeante">_</span></p>
+      </div>
+      </div>
+
+    </div>
+  </header>
   <!-- Contenedor principal de los pasos -->
   <ol class="process-flow">
     
@@ -37,13 +93,46 @@
       <h2 class="step-title">Me conecto</h2>
     </li>
 
-    <!-- Paso 5 -->
-    <li class="step-card">
-      <span class="step-label">paso 5</span>
-      <h2 class="step-title">Estilo y diseño adaptable — la base que sostiene todo</h2>
-    </li>
-
   </ol>
+
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="container">
+          <h3>Equipo de desarrollo</h3>
+          <div class="footer-links">
+              <a href="https://github.com/Estrellasaln0rte/Landing_Page" target="_blank">
+                  <i class="fa-brands fa-github"></i>
+                  GitHub del proyecto
+              </a>
+
+              <a href="https://outlook.office.com/mail/deeplink/compose?to=laherrerao@correo.url.edu.gt" target="_blank">
+                  <i class="fa-solid fa-envelope"></i>
+                  Lizbeth Herrera
+              </a>
+
+              <a href="https://outlook.office.com/mail/deeplink/compose?to=mnletran@correo.url.edu.gt" target="_blank">
+                  <i class="fa-solid fa-envelope"></i>
+                  Marcela Letrán
+              </a>
+
+              <a href="https://outlook.office.com/mail/deeplink/compose?to=jadelarocam@correo.url.edu.gt" target="_blank">
+                  <i class="fa-solid fa-envelope"></i>
+                  Jose de la Roca
+              </a>
+
+              <a href="https://outlook.office.com/mail/deeplink/compose?to=ojortizp@correo.url.edu.gt" target="_blank">
+                  <i class="fa-solid fa-envelope"></i>
+                  Oscar Ortiz
+              </a>
+
+              <a href="https://outlook.office.com/mail/deeplink/compose?to=jpestradaro@correo.url.edu.gt" target="_blank">
+                  <i class="fa-solid fa-envelope"></i>
+                  Juan Pablo Estrada
+              </a>
+          </div>
+          <p>© Landing Page 2026</p>
+      </div>
+  </footer>
 
 </body>
 </html>
