@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flujo de Pasos</title>
@@ -67,90 +66,74 @@
 
     </div>
   </header>
+
   <!-- Contenedor principal de los pasos -->
-  <ol class="process-flow">
+ <!-- POP-UP INTERACTIVO (Pestañas) -->
+  <main class="popup-container">
     
-    <!-- Paso 1 -->
-    <li class="step-card">
-      <span class="step-label">paso 1</span>
-      <h2 class="step-title">Llego y me ubico</h2>
-    </li>
+    <!-- Botones de las Pestañas -->
+    <div class="popup-tabs">
+      <button class="tab-btn active" onclick="abrirPestana(event, 'tab-equipo')">El Equipo</button>
+      <button class="tab-btn" onclick="abrirPestana(event, 'tab-fase1')">Proyectos</button>
+    </div>
 
-    <!-- Paso 2 -->
-    <li class="step-card">
-      <span class="step-label">paso 2</span>
-      <h2 class="step-title">Conozco al equipo</h2>
-      <div class="team-grid">
-        <article class="team-card">
-          <img src="images/mnletranl.png" alt="Foto de Líder">
-          <h3>Marcela Nicole Letran Lee</h3>
-          <p>Líder del proyecto | Desarrollador Frontend</p>
-        </article>
-        <article class="team-card">
-          <img src="images/laherrerao.png" alt="Foto de Desarrollador Backend">
-          <h3>Lizbeth Andrea Herrera Ortega</h3>
-          <p>Desarrollador Backend</p>
-        </article>
-        <article class="team-card">
-          <img src="images/ojortizp.png" alt="Foto de Desarrollador Frontend">
-          <h3>Oscar Javier Ortíz Pocón</h3>
-          <p>Desarrollador Frontend</p>
-        </article>
-        <article class="team-card">
-          <img src="images/jadrocam.png" alt="Foto de Diseñador UX/UI">
-          <h3>José Andrés De la Roca Martínez</h3>
-          <p>Diseñador UX/UI</p>
-        </article>
-        <article class="team-card">
-          <img src="images/jpestradar.png" alt="Foto de QA">
-          <h3>Juan Pablo Estrada Rodríguez</h3>
-          <p>Quality Assurance (QA)</p>
-        </article>
+    <!-- Contenido del Pop-up -->
+    <div class="popup-body">
+      
+      <!-- Pestaña 1: El Equipo -->
+      <div id="tab-equipo" class="tab-panel active">
+        <h2 class="panel-title">Conoce a nuestro equipo</h2>
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="pixel-frame">
+              <img src="images/mnletranl.png" alt="Foto de Líder">
+            </div>
+            <h3>Marcela Nicole Letran Lee</h3>
+            <p>Líder del proyecto | Frontend</p>
+          </article>
+          
+          <article class="team-card">
+            <div class="pixel-frame">
+              <img src="images/laherrerao.png" alt="Foto de Backend">
+            </div>
+            <h3>Lizbeth Andrea Herrera Ortega</h3>
+            <p>Desarrollador Backend</p>
+          </article>
+          
+          <article class="team-card">
+            <div class="pixel-frame">
+              <img src="images/ojortizp.png" alt="Foto de Frontend">
+            </div>
+            <h3>Oscar Javier Ortíz Pocón</h3>
+            <p>Desarrollador Frontend</p>
+          </article>
+          
+          <article class="team-card">
+            <div class="pixel-frame">
+              <img src="images/jadrocam.png" alt="Foto de UX/UI">
+            </div>
+            <h3>José Andrés De la Roca Martínez</h3>
+            <p>Diseñador UX/UI</p>
+          </article>
+          
+          <article class="team-card">
+            <div class="pixel-frame">
+              <img src="images/jpestradar.png" alt="Foto de QA">
+            </div>
+            <h3>Juan Pablo Estrada Rodríguez</h3>
+            <p>Quality Assurance (QA)</p>
+          </article>
+        </div>
       </div>
-    </li>
 
-    <!-- Paso 3 -->
-    <li class="step-card" id="proyecto">
-      <span class="step-label">paso 3</span>
-      <h2 class="step-title">Veo qué hacen</h2>
-
-      <div class="proyecto">
-        <h3 class="proyecto-titulo">La landing que estás viendo</h3>
-
-        <p class="proyecto-descripcion">
-          Somos cinco estudiantes de Programación Web construyendo esta página desde cero,
-          sin plantillas. Cada quien toma una historia de usuario, la desarrolla en su propia
-          rama y la propone por Pull Request. Sobre esta base montaremos después la aplicación
-          full-stack del curso.
-        </p>
-
-        <h4 class="proyecto-subtitulo">Con qué la construimos</h4>
-        <ul class="proyecto-tecnologias">
-          <li class="tecnologia">HTML semántico</li>
-          <li class="tecnologia">CSS (Flexbox y Grid)</li>
-          <li class="tecnologia">Diseño responsivo</li>
-          <li class="tecnologia">Git</li>
-          <li class="tecnologia">GitHub · fork y Pull Requests</li>
-        </ul>
-
-        <h4 class="proyecto-subtitulo">Hacia dónde va</h4>
-        <ul class="proyecto-tecnologias proyecto-tecnologias--siguiente">
-          <li class="tecnologia">TypeScript</li>
-          <li class="tecnologia">React + Vite</li>
-          <li class="tecnologia">Node + Express</li>
-          <li class="tecnologia">PostgreSQL + Prisma</li>
-          <li class="tecnologia">Docker</li>
-        </ul>
+      <!-- Pestaña 2: Proyectos -->
+      <div id="tab-fase1" class="tab-panel">
+        <h2 class="panel-title">conoce nuestro trabajo</h2>
+        <p class="panel-text">Aquí puedes colocar la información de los primeros pasos del proyecto sin saturar la pantalla principal.</p>
       </div>
-    </li>
 
-    <!-- Paso 5 -->
-    <li class="step-card">
-      <span class="step-label">paso 5</span>
-      <h2 class="step-title">Estilo y diseño adaptable — la base que sostiene todo</h2>
-    </li>
-
-  </ol>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -190,6 +173,26 @@
           <p>© Landing Page 2026</p>
       </div>
   </footer>
+
+  <script>
+    function abrirPestana(evento, idPestana) {
+      // 1. Ocultar todos los paneles
+      const paneles = document.querySelectorAll('.tab-panel');
+      paneles.forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      // 2. Quitar el estado 'active' de todos los botones
+      const botones = document.querySelectorAll('.tab-btn');
+      botones.forEach(boton => {
+        boton.classList.remove('active');
+      });
+
+      // 3. Mostrar el panel correspondiente y marcar el botón como activo
+      document.getElementById(idPestana).classList.add('active');
+      evento.currentTarget.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
