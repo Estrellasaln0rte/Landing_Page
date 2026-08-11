@@ -1,4 +1,6 @@
-/* VARIABLES GLOBALES (Paleta Pixel Art) */
+/* =========================================
+   VARIABLES GLOBALES (Paleta Pixel Art)
+   ========================================= */
 :root {
   --color-claro: #E3DEEE;      
   --color-morado-claro: #907DBA; 
@@ -9,14 +11,18 @@
   --fuente-pixel: 'Press Start 2P', monospace;
 }
 
-/* RESETEO BÁSICO */
+/* =========================================
+   RESETEO BÁSICO
+   ========================================= */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ESTILOS GENERALES*/
+/* =========================================
+   ESTILOS GENERALES
+   ========================================= */
 body {
   background-color: var(--color-fondo);
   color: var(--color-claro);
@@ -27,7 +33,9 @@ body {
   background-size: 20px 20px;
 }
 
-/* HEADER Y TERMINAL DEV (Pixel Art)*/
+/* =========================================
+   HEADER & TERMINAL DEV
+   ========================================= */
 .dev-header {
   background-color: var(--color-fondo);
   background-image: 
@@ -38,7 +46,7 @@ body {
   padding-bottom: 60px;
 }
 
-/* Navegación*/
+/* --- Navegación --- */
 .pixel-nav {
   display: flex;
   justify-content: space-between;
@@ -75,7 +83,7 @@ body {
   color: var(--color-claro);
 }
 
-/* Estructura Responsiva del Hero  */
+/* --- Estructura Responsiva del Hero --- */
 .hero-wrapper {
   display: flex;
   flex-direction: column; 
@@ -210,60 +218,149 @@ body {
   50% { opacity: 0; }
 }
 
-/* 
-   FLUJO DE PASOS (Siempre en Vertical)
-    */
-.process-flow {
-  list-style: none;
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column; /* Apilado vertical estricto */
-  gap: 30px;
-  max-width: 800px; /* Reducido para que la columna central se vea mejor proporcionada */
-  margin: 0 auto;
+/* =========================================
+   POP-UP INTERACTIVO (Pestañas Corregidas)
+   ========================================= */
+.popup-container {
+  width: 90%; /* Ocupa el 90% del ancho para dejar un margen parejo a los lados */
+  max-width: 1400px; /* Límite amplio para monitores grandes */
+  margin: 5vh auto; /* 5% de margen arriba y abajo, automático a los lados */
 }
 
-.step-card {
-  width: 100%;
-  background-color: var(--color-morado-oscuro);
+/* --- Sistema de Pestañas --- */
+.popup-tabs {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap; 
+  position: relative;
+  z-index: 10;
+  margin-bottom: -4px; /* Empuja las pestañas 4px abajo para que muerdan el borde principal */
+}
+
+.tab-btn {
+  background-color: var(--color-fondo);
+  color: var(--color-morado-claro);
   border: 4px solid var(--color-morado-medio);
-  padding: 25px;
-  box-shadow: 6px 6px 0px var(--color-fondo), 
-              inset -4px -4px 0px rgba(0, 0, 0, 0.4),
-              inset 4px 4px 0px rgba(255, 255, 255, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  padding: 12px 25px;
+  font-family: inherit;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  letter-spacing: 1px;
 }
 
-.step-card:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 10px 10px 0px var(--color-fondo), 
-              inset -4px -4px 0px rgba(0, 0, 0, 0.4),
-              inset 4px 4px 0px rgba(255, 255, 255, 0.1);
+.tab-btn:hover {
+  background-color: var(--color-morado-oscuro);
+  color: var(--color-claro);
+}
+
+/* Pestaña seleccionada (Líneas continuas, sin cortes raros) */
+.tab-btn.active {
+  background-color: var(--color-morado-oscuro);
+  color: var(--color-claro);
+  border-color: var(--color-claro);
+  /* Pintamos el borde de abajo del mismo color del fondo para "borrar" la línea */
+  border-bottom-color: var(--color-morado-oscuro);
+  /* Padding extra abajo para asentar la pestaña sin usar 'transform' */
+  padding-bottom: 16px; 
+}
+
+/* --- Cuerpo del Pop-up --- */
+.popup-body {
+  background-color: var(--color-morado-oscuro);
+  border: 4px solid var(--color-claro);
+  padding: 40px;
+  box-shadow: 15px 15px 0px rgba(0,0,0,0.6);
+  position: relative;
+  z-index: 1; /* Se queda detrás de las pestañas */
+  min-height: 65vh; /* Garantiza que ocupe gran parte de la pantalla verticalmente */
+}
+
+/* --- Control de Paneles --- */
+.tab-panel {
+  display: none; 
+  animation: fade-in 0.3s ease-in-out;
+}
+
+.tab-panel.active {
+  display: block; 
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.panel-title {
+  font-size: 1.2rem;
+  color: var(--color-claro);
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 0px var(--color-fondo);
+  border-bottom: 2px dashed var(--color-morado-medio);
+  padding-bottom: 15px;
+}
+
+.panel-text {
+  font-size: 0.8rem;
+  color: var(--color-morado-claro);
+  line-height: 1.8;
+}
+
+/* --- Grid del Equipo y Marcos Pixelados --- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  gap: 30px;
+}
+
+.team-card {
+  background-color: var(--color-fondo);
+  border: 2px solid var(--color-morado-medio);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
   border-color: var(--color-morado-claro);
 }
 
-.step-label {
-  align-self: flex-start; 
-  color: var(--color-fondo);
-  background-color: var(--color-morado-claro);
-  padding: 5px 10px;
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  border: 2px solid var(--color-claro);
+.pixel-frame {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 15px;
+  background-color: var(--color-morado-oscuro);
+  border: 4px solid var(--color-claro);
+  box-shadow: 
+    4px 4px 0px var(--color-morado-medio),
+    inset -4px -4px 0px rgba(0,0,0,0.5);
+  overflow: hidden; 
 }
 
-.step-title {
-  font-size: 1rem;
+.pixel-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated; 
+}
+
+.team-card h3 {
+  font-size: 0.65rem;
   color: var(--color-claro);
-  text-shadow: 2px 2px 0px var(--color-fondo);
+  margin-bottom: 8px;
   line-height: 1.4;
 }
 
-/* FOOTER*/
+.team-card p {
+  font-size: 0.55rem;
+  color: var(--color-morado-claro);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
 .footer {
   width: 100%;
   background-color: var(--color-morado-oscuro);
@@ -323,10 +420,12 @@ body {
   margin-top: 40px;
 }
 
-/* MEDIA QUERIES (PANTALLAS GRANDES / PC)*/
+/* =========================================
+   MEDIA QUERIES (PANTALLAS GRANDES / PC)
+   ========================================= */
 @media (min-width: 992px) {
   
-  /* Cabecera Lado a Lado (Solamente el Hero y la Terminal cambian aquí) */
+  /* Cabecera Lado a Lado */
   .hero-wrapper {
     flex-direction: row; 
     justify-content: space-between;
