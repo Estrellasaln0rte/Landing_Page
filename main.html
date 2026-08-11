@@ -66,34 +66,34 @@
 
     </div>
   </header>
+
   <!-- Contenedor principal de los pasos -->
-  <ol class="process-flow">
+ <!-- POP-UP INTERACTIVO (Pestañas) -->
+  <main class="popup-container">
     
-    <!-- Paso 1 -->
-    <li class="step-card">
-      <span class="step-label">paso 1</span>
-      <h2 class="step-title">Llego y me ubico</h2>
-    </li>
+    <!-- Botones de las Pestañas -->
+    <div class="popup-tabs">
+      <button class="tab-btn active" onclick="abrirPestana(event, 'tab-equipo')">El Equipo</button>
+      <button class="tab-btn" onclick="abrirPestana(event, 'tab-fase1')">Proyectos</button>
+    </div>
 
-    <!-- Paso 2 -->
-    <li class="step-card">
-      <span class="step-label">paso 2</span>
-      <h2 class="step-title">Conozco al equipo</h2>
-    </li>
+    <!-- Contenido del Pop-up -->
+    <div class="popup-body">
+      
+      <!-- Pestaña 1: El Equipo -->
+      <div id="tab-equipo" class="tab-panel active">
+        <h2 class="panel-title">Conoce a nuestro equipo</h2>
+        <p class="panel-text">Información de lso integrantes</p>
+      </div>
 
-    <!-- Paso 3 -->
-    <li class="step-card">
-      <span class="step-label">paso 3</span>
-      <h2 class="step-title">Veo qué hacen</h2>
-    </li>
+      <!-- Pestaña 2: Proyectos -->
+      <div id="tab-fase1" class="tab-panel">
+        <h2 class="panel-title">conoce nuestro trabajo</h2>
+        <p class="panel-text">Aquí puedes colocar la información de los primeros pasos del proyecto sin saturar la pantalla principal.</p>
+      </div>
 
-    <!-- Paso 4 -->
-    <li class="step-card">
-      <span class="step-label">paso 4</span>
-      <h2 class="step-title">Me conecto</h2>
-    </li>
-
-  </ol>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -133,6 +133,26 @@
           <p>© Landing Page 2026</p>
       </div>
   </footer>
+
+  <script>
+    function abrirPestana(evento, idPestana) {
+      // 1. Ocultar todos los paneles
+      const paneles = document.querySelectorAll('.tab-panel');
+      paneles.forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      // 2. Quitar el estado 'active' de todos los botones
+      const botones = document.querySelectorAll('.tab-btn');
+      botones.forEach(boton => {
+        boton.classList.remove('active');
+      });
+
+      // 3. Mostrar el panel correspondiente y marcar el botón como activo
+      document.getElementById(idPestana).classList.add('active');
+      evento.currentTarget.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
